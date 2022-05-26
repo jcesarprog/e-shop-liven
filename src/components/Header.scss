@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+    &__title {
+        font-size: 2.4rem;
+        ;
+        margin-right: 2rem;
+        cursor: pointer;
+    }
+
+  &__company-img {
+    img {
+      width: 6.7rem;
+      height: 2.4rem;
+      margin-right: 20px;
+    }
+  }
+
+  &__cart {
+      margin-left: auto;
+  }
+
+  
+}

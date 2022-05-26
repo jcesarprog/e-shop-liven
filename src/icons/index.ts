@@ -6,6 +6,10 @@ export {
 
 
   /*
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleMinus, faCirclePlus, faCartShopping } from "./icons";
+
+
 <FontAwesomeIcon
           icon={faCircleMinus}
           style={{ fontSize: 100, color: "blue", marginRight: 30 }}

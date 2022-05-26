@@ -1,13 +1,12 @@
-import './App.scss';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faCircleMinus,faCirclePlus,faCartShopping} from "./icons"
+import "./App.scss";
+import { Header, SearchBar } from "./components";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
-      <p>Test</p>
-
+        <Header />
+        <SearchBar/>
       </div>
     </div>
   );
