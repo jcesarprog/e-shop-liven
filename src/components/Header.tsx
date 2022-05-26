@@ -1,4 +1,3 @@
-import React from "react";
 import { ShoppingCart } from "../components";
 import "./Header.scss";
 
@@ -10,7 +9,7 @@ export const Header = () => {
         <img src="logo-livern.webp" alt="" />
       </div>
       <div className="header__cart">
-      <ShoppingCart />
+        <ShoppingCart />
       </div>
     </header>
   );

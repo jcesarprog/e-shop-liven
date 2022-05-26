@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { IFakeStoreProduct } from "../interfaces/fakeStore";
 /**
  * Fake store example calls
     fetch('https://fakestoreapi.com/products')
@@ -19,8 +19,7 @@ import axios from "axios";
     .then(json=>console.log(json))
 */
 
-export async function getProducts() {
+export async function getProducts(): Promise<IFakeStoreProduct[]> {
     const response = await axios.get("https://fakestoreapi.com/products");
-    console.log(response.data);
-
+    return response.data;
 }
