@@ -7,6 +7,8 @@ export const SearchBar = () => {
   const { products } = useAppContext();
 
   const handleSearch = () => {
+    console.log(products);
+    
     if (!search) return;
 
     const filteredProducts = products.filter((product) =>

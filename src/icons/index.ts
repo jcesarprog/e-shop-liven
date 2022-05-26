@@ -2,16 +2,6 @@ export {
   faCircleMinus,
   faCirclePlus,
   faCartShopping, // a shopping cart
+  faPlus,
+  faTrashCan
 } from "@fortawesome/free-solid-svg-icons";
-
-
-/*
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleMinus, faCirclePlus, faCartShopping } from "./icons";
-
-
-<FontAwesomeIcon
-        icon={faCircleMinus}
-        style={{ fontSize: 100, color: "blue", marginRight: 30 }}
-      />
-*/
