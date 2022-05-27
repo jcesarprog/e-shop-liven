@@ -3,9 +3,10 @@
   display: flex;
   align-items: center;
   width: 100%;
-  top: 2rem;
-  padding-block: 1rem;
+  top: 0;
+  padding-top: 2rem;
   background-color: #fff;
+  height: 6rem;
   &__title {
     font-size: 2.4rem;
     margin-right: 2rem;
@@ -21,6 +22,13 @@
   }
 
   &__cart {
+    cursor: pointer;
+
     margin-left: auto;
   }
+}
+
+.router__link {
+  text-decoration: none;
+  color: #000;
 }

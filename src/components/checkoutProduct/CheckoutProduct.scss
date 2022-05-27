@@ -1,0 +1,67 @@
+.checkoutProd {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-img {
+      img {
+        width: 8rem;
+        height: 4rem;
+      }
+    }
+    &-price {
+      align-self: flex-end;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    &-title {
+      text-align: right;
+    }
+    &-actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.6rem;
+      justify-content: flex-end;
+      font-size: 1.5rem;
+      &-minus {
+        &-icon {
+          cursor: pointer;
+          color: green;
+        }
+      }
+      &-plus {
+        &-icon {
+          cursor: pointer;
+          color: green;
+        }
+      }
+      &-delete {
+        &-icon {
+          cursor: pointer;
+          color: red;
+        }
+      }
+      &-amount {
+        span {
+          color: #000;
+        }
+      }
+    }
+    &-total {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      margin-left: auto;
+    }
+  }
+}

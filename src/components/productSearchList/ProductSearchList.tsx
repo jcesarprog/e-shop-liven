@@ -10,11 +10,10 @@ export const ProductSearchList = () => {
 
   const renderProduct = (product: IFakeStoreProduct) => {
     return( <Product
-    key={product.id}
-    image={product.image}
-    price={product.price}
-    title={product.title}
-  />)
+      key={product.id}
+      image={product.image}
+      price={product.price}
+      title={product.title} id={product.id}  />)
   }
 
   const renderProducts = () => {
