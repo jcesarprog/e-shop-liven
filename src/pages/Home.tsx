@@ -1,9 +1,11 @@
-import {SearchBar } from '../components'
+import {SearchBar, ProductSearchList } from '../components'
 
 export const Home = () => {
   return (
-    <div>
+    <main>
         <SearchBar />
-    </div>
+        {/* product list */}
+        <ProductSearchList/>
+    </main>
   )
 }

@@ -1,4 +1,4 @@
-import { ShoppingCart } from "../components";
+import { ShoppingCart } from "../../components";
 import "./Header.scss";
 
 export const Header = () => {

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IFakeStoreProduct } from "../interfaces/fakeStore";
-import { faPlus } from "../icons";
+import { IFakeStoreProduct } from "../../interfaces/fakeStore";
+import { faPlus } from "../../icons";
 
 import "./Product.scss";
 

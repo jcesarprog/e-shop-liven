@@ -6,6 +6,8 @@
   height: 192px;
   padding: 1.2rem;
   font-size: 1.2rem;
+  overflow: hidden;
+
   &__image {
     display: flex;
     justify-content: center;
@@ -16,6 +18,10 @@
   }
   &__title {
     font-weight: bold;
+    margin-block: 0.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   &__price_btn-container {
     display: flex;

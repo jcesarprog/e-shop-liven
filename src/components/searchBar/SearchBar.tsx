@@ -1,22 +1,18 @@
 import React, { useState } from "react";
-import { useAppContext } from "../contexts/AppContext";
+import { useAppContext } from "../../contexts/AppContext";
 import "./SearchBar.scss";
 
 export const SearchBar = () => {
   const [search, setSearch] = useState("");
-  const { products } = useAppContext();
+  const { products, setFilteredProducts } = useAppContext();
 
   const handleSearch = () => {
-    console.log(products);
-    
-    if (!search) return;
+    if (!search) setFilteredProducts(products);
 
     const filteredProducts = products.filter((product) =>
       product.title.toLowerCase().includes(search.toLowerCase())
     );
-    console.log(filteredProducts);
-
-    return filteredProducts;
+    setFilteredProducts(filteredProducts);
   };
 
   return (

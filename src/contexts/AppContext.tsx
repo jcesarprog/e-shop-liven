@@ -8,6 +8,8 @@ interface IContext {
   removeFromCart: (product: IFakeStoreProduct) => void;
   setCart: (cart: IFakeStoreProduct[]) => void;
   products: IFakeStoreProduct[];
+  filteredProducts: IFakeStoreProduct[];
+  setFilteredProducts: (filteredProducts: IFakeStoreProduct[]) => void;
 }
 
 // ! since the fake api has only 20 items
@@ -18,12 +20,16 @@ const AppContext = React.createContext({} as IContext);
 export const useAppContext = () => React.useContext(AppContext);
 
 export const AppContextProvider = ({ children }: any) => {
-  const [cart, setCart] = useState<IFakeStoreProduct[]>([]);
   const [products, setProducts] = useState<IFakeStoreProduct[]>([]);
+  
+  const [cart, setCart] = useState<IFakeStoreProduct[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<IFakeStoreProduct[]>(
+    []
+  );
 
   useEffect(() => {
     getProducts().then((prods) => setProducts(prods));
-  }, []);
+  }, [products]);
 
   const addToCart = (product: IFakeStoreProduct) => {
     setCart([...cart, product]);
@@ -41,6 +47,8 @@ export const AppContextProvider = ({ children }: any) => {
         removeFromCart,
         setCart,
         products,
+        filteredProducts,
+        setFilteredProducts,
       }}
     >
       {children}

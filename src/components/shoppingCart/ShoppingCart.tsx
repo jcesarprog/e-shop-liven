@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useAppContext } from "../contexts/AppContext";
-import { faCartShopping } from "../icons";
+import { useAppContext } from "../../contexts/AppContext";
+import { faCartShopping } from "../../icons";
 import "./ShoppingCart.scss";
 
 export const ShoppingCart = () => {
