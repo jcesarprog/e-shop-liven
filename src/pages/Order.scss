@@ -1,0 +1,12 @@
+.order {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__msg {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

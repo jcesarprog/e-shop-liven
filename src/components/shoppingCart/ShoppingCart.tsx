@@ -8,9 +8,7 @@ export const ShoppingCart = () => {
   return (
     <div className="cart">
       <div className="cart__icon">
-        <FontAwesomeIcon 
-        icon={faCartShopping} 
-        className="cart__icon-img" />
+        <FontAwesomeIcon icon={faCartShopping} className="cart__icon-img" />
       </div>
       <div className="cart__circle">
         <span className="cart__circle-count">{cart.length}</span>

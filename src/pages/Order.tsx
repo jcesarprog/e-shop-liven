@@ -10,5 +10,5 @@ export const Order = () => {
         </div>
       </div>
     </main>
-  )
-}
+  );
+};

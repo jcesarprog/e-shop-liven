@@ -14,15 +14,13 @@
       img {
         width: 8rem;
         height: 4rem;
-      user-select: none;
-
+        user-select: none;
       }
     }
     &-price {
       align-self: flex-end;
       font-size: 1.2rem;
       user-select: none;
-
     }
   }
 
@@ -32,7 +30,6 @@
     &-title {
       text-align: right;
       user-select: none;
-
     }
     &-actions {
       margin-top: 1rem;
@@ -61,8 +58,7 @@
       &-amount {
         span {
           color: #000;
-      user-select: none;
-
+          user-select: none;
         }
       }
     }

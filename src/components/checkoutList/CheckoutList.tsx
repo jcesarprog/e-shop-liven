@@ -12,13 +12,12 @@ export const CheckoutList = () => {
       <div className="checkout__title">
         <h2>Your Cart</h2>
         <div className="checkout__total-order">
-        <span>Total: ${total}</span>
-        <Link to="/order" className="router__link">
-        <button className="checkout__cta"
-        onClick={() => setCart([])}
-        
-        >Finish Order</button>
-        </Link>
+          <span>Total: ${total.toFixed(2)}</span>
+          <Link to="/order" className="router__link">
+            <button className="checkout__cta" onClick={() => setCart([])}>
+              Finish Order
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -34,7 +33,7 @@ export const CheckoutList = () => {
           />
         ))
       ) : (
-        <h2>Your cart is empty</h2>
+        <h2>Your cart is empty!</h2>
       )}
     </div>
   );
