@@ -2,7 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ICartProduct } from "../../interfaces";
 import { faCirclePlus, faCircleMinus, faTrashCan } from "../../icons";
-import "./CheckoutProduct.scss"
+import { useAppContext } from "../../contexts/AppContext";
+import "./CheckoutProduct.scss";
 
 export const CheckoutProduct = ({
   id,
@@ -11,6 +12,7 @@ export const CheckoutProduct = ({
   price,
   amount,
 }: ICartProduct) => {
+  const { deleteById, removeOneById, addOneById } = useAppContext();
   return (
     <div className="checkoutProd">
       <div className="checkoutProd__left">
@@ -18,7 +20,7 @@ export const CheckoutProduct = ({
           <img src={image} alt={title} />
         </div>
         <div className="checkoutProd__left-price">
-          <span>Price: ${(price).toFixed(2)}</span>
+          <span>Price: ${price.toFixed(2)}</span>
         </div>
       </div>
       <div className="checkoutProd__right">
@@ -29,6 +31,7 @@ export const CheckoutProduct = ({
             <FontAwesomeIcon
               icon={faCircleMinus}
               className="checkoutProd__right-actions-minus-icon"
+              onClick={() => removeOneById(id)}
             />
           </div>
           <div className="checkoutProd__right-actions-amount">
@@ -38,12 +41,14 @@ export const CheckoutProduct = ({
             <FontAwesomeIcon
               icon={faCirclePlus}
               className="checkoutProd__right-actions-plus-icon"
+              onClick={() => addOneById(id)}
             />
           </div>
           <div className="checkoutProd__right-actions-delete">
             <FontAwesomeIcon
               icon={faTrashCan}
               className="checkoutProd__right-actions-delete-icon"
+              onClick={() => deleteById(id)}
             />
           </div>
         </div>

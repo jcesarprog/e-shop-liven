@@ -3,13 +3,17 @@ import { IFakeStoreProduct, ICartProduct } from "../interfaces";
 import { getProducts } from "../services/fakeStore";
 
 interface IContext {
-  cart: ICartProduct[];
-  addToCart: (product: Omit<ICartProduct, "amount">) => void;
-  removeFromCart: (product: ICartProduct) => void;
-  setCart: (cart: ICartProduct[]) => void;
   products: IFakeStoreProduct[];
   filteredProducts: IFakeStoreProduct[];
   setFilteredProducts: (filteredProducts: IFakeStoreProduct[]) => void;
+  cart: ICartProduct[];
+  addToCart: (product: Omit<ICartProduct, "amount">) => void;
+  setCart: (cart: ICartProduct[]) => void;
+  deleteById: (id: number) => void;
+  removeOneById: (id: number) => void;
+  addOneById: (id: number) => void;
+  total: number;
+  
 }
 
 // ! since the fake api has only 20 items
@@ -26,14 +30,12 @@ export const AppContextProvider = ({ children }: any) => {
   const [filteredProducts, setFilteredProducts] = useState<IFakeStoreProduct[]>(
     []
   );
-
+  const [total, setTotal] = useState(0)
   useEffect(() => {
     getProducts().then((prods) => setProducts(prods));
   }, []);
-
-  // useEffect(() => {
-  //   console.log(products);
-  // }, [products]);
+  const getTotal = () => setTotal(+(cart.reduce((acc, item)=> acc + (item.price * item.amount),0)).toFixed(2))
+ 
 
   const addToCart = (product: Omit<ICartProduct, "amount">) => {
     const newCart = [...cart];
@@ -43,22 +45,44 @@ export const AppContextProvider = ({ children }: any) => {
     else newCart.push({ ...product, amount: 1 });
 
     setCart(newCart);
+    getTotal();
   };
 
-  const removeFromCart = (product: ICartProduct) => {
-    setCart(cart.filter((item) => item.id !== product.id));
+  const deleteById = (id: number) => {
+    setCart(cart.filter((item) => item.id !== id));
+    getTotal();
+  };
+
+  const removeOneById = (id: number) => {
+    const newCart = [...cart];
+    const productInCartIdx = newCart.findIndex((item) => item.id === id);
+    newCart[productInCartIdx].amount -= 1;
+    if (newCart[productInCartIdx].amount <= 0) deleteById(id);
+    else setCart(newCart);
+    getTotal();
+  };
+
+  const addOneById = (id: number) => {
+    const newCart = [...cart];
+    const productInCart = newCart.find((item) => item.id === id);
+    if (productInCart) productInCart.amount += 1;
+    setCart(newCart);
+    getTotal();
   };
 
   return (
     <AppContext.Provider
       value={{
         cart,
-        addToCart,
-        removeFromCart,
         setCart,
+        addToCart,
+        deleteById,
+        removeOneById,
+        addOneById,
         products,
         filteredProducts,
         setFilteredProducts,
+        total
       }}
     >
       {children}
