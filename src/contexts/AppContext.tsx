@@ -13,7 +13,6 @@ interface IContext {
   removeOneById: (id: number) => void;
   addOneById: (id: number) => void;
   total: number;
-  
 }
 
 // ! since the fake api has only 20 items
@@ -30,12 +29,20 @@ export const AppContextProvider = ({ children }: any) => {
   const [filteredProducts, setFilteredProducts] = useState<IFakeStoreProduct[]>(
     []
   );
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0);
   useEffect(() => {
     getProducts().then((prods) => setProducts(prods));
   }, []);
-  const getTotal = () => setTotal(+(cart.reduce((acc, item)=> acc + (item.price * item.amount),0)).toFixed(2))
- 
+
+  useEffect(() => {
+    getTotal();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cart]);
+
+  const getTotal = () =>
+    setTotal(
+      +cart.reduce((acc, item) => acc + item.price * item.amount, 0).toFixed(2)
+    );
 
   const addToCart = (product: Omit<ICartProduct, "amount">) => {
     const newCart = [...cart];
@@ -82,7 +89,7 @@ export const AppContextProvider = ({ children }: any) => {
         products,
         filteredProducts,
         setFilteredProducts,
-        total
+        total,
       }}
     >
       {children}

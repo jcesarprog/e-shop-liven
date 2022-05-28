@@ -1,7 +1,28 @@
 .checkout {
-    &__title-total {
+    &__title {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        h2 {
+            align-self: flex-start;;
+        }
+    }
+    &__total-order {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        span {
+            font-weight: bold;
+        }
+    }
+    &__cta {
+        cursor: pointer;
+        margin-top: 1rem;
+        background-color: #0c8cdb;
+        border: 1px solid #ccc;
+        color: #fff;
+        padding: .2rem 1rem;
+        border-radius: .5rem;
+        font-size: 1.2rem;
     }
 }
