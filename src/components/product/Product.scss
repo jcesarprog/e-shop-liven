@@ -12,8 +12,11 @@
     display: flex;
     justify-content: center;
     img {
-      width: 26.2rem;
-      height: 13.3rem;
+      max-width: 26rem;
+      max-height: 13rem;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
   }
   &__title {

@@ -11,10 +11,15 @@
     flex-direction: column;
     justify-content: space-between;
     &-img {
+      display: flex;
+      justify-content: center;
       img {
-        width: 8rem;
-        height: 4rem;
+        max-width: 8rem;
+        max-height: 5rem;
+        width: auto;
+        height: auto;
         user-select: none;
+        object-fit: contain;
       }
     }
     &-price {
