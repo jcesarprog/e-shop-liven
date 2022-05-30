@@ -11,7 +11,9 @@ export const ShoppingCart = () => {
         <FontAwesomeIcon icon={faCartShopping} className="cart__icon-img" />
       </div>
       <div className="cart__circle">
-        <span className="cart__circle-count">{cart.length}</span>
+        <span className="cart__circle-count" data-testid="cart-counter">
+          {cart?.length | 0}
+        </span>
       </div>
     </div>
   );

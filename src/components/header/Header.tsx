@@ -10,10 +10,10 @@ export const Header = () => {
         <h1 className="header__title">E-Shop</h1>
       </Link>
       <div className="header__company-img">
-        <img src="logo-livern.webp" alt="" />
+        <img src="logo-livern.webp" alt="logo" />
       </div>
       <div className="header__cart">
-        <Link to="/checkout" className="router__link">
+        <Link to="/checkout" className="router__link" data-testid="cart">
           <ShoppingCart />
         </Link>
       </div>

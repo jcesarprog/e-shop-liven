@@ -22,6 +22,7 @@ export const SearchBar = () => {
         className="search__term"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search for product"
         onKeyUp={(e) => {
           if (e.code === "Enter") handleSearch();
         }}

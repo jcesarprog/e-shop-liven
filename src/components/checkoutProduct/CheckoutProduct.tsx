@@ -27,28 +27,37 @@ export const CheckoutProduct = ({
         <h3 className="checkoutProd__right-title">{title}</h3>
 
         <div className="checkoutProd__right-actions">
-          <div className="checkoutProd__right-actions-minus">
+          <div
+            className="checkoutProd__right-actions-minus"
+            data-testid="minus-btn"
+            onClick={() => removeOneById(id)}
+          >
             <FontAwesomeIcon
               icon={faCircleMinus}
               className="checkoutProd__right-actions-minus-icon"
-              onClick={() => removeOneById(id)}
             />
           </div>
           <div className="checkoutProd__right-actions-amount">
             <span>{amount}</span>
           </div>
-          <div className="checkoutProd__right-actions-plus">
+          <div
+            className="checkoutProd__right-actions-plus"
+            data-testid="plus-btn"
+            onClick={() => addOneById(id)}
+          >
             <FontAwesomeIcon
               icon={faCirclePlus}
               className="checkoutProd__right-actions-plus-icon"
-              onClick={() => addOneById(id)}
             />
           </div>
-          <div className="checkoutProd__right-actions-delete">
+          <div
+            className="checkoutProd__right-actions-delete"
+            data-testid="delete-btn"
+            onClick={() => deleteById(id)}
+          >
             <FontAwesomeIcon
               icon={faTrashCan}
               className="checkoutProd__right-actions-delete-icon"
-              onClick={() => deleteById(id)}
             />
           </div>
         </div>
