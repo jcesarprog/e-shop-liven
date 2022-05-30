@@ -12,6 +12,7 @@
  - Used SASS for styling
  - Fully made with typescript and react
  - Made tests for the main components and for the golden path going through all the application
+ - The cart adds product and its amount, so if the same product is added more than once, only the amount of the product inside the cart will be updated and the displayed number will remain the same, but if a new product is added the number displayed on cart will be increased
 
 ## App Screenshots samples
 
